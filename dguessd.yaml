@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dguessd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dguessp
+  template:
+    metadata:
+      labels:
+        app: dguessp
+    spec:
+      containers:
+        - name: dguessc
+          image: ftatimo/guessgamedocker:v1
+          ports:
+            - containerPort: 80
