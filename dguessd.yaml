@@ -15,5 +15,6 @@ spec:
       containers:
         - name: dguessc
           image: ftatimo/guessgamedocker:v1
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
